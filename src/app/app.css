@@ -1,0 +1,81 @@
+/* src/app/app.css */
+:host {
+  display: flex;
+  flex-direction: column;
+  /* CHANGE THIS: */
+  background-color: transparent; /* Make it see-through */
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 50px; /* Pill shape */
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+  font-size: 1.5rem; /* Make header text smaller */
+  margin: 0; /* Remove default margins */
+  padding: 10px;
+  display: inline-block;
+}
+
+nav {
+  /* ... keep the display:flex rules ... */
+  /* Remove the border-bottom, it's now on the header */
+  border-bottom: none; 
+  padding-bottom: 0;
+}
+
+.welcome-user {
+  margin-right: 15px;
+  color: #ccc;
+}
+
+nav a {
+  color: #FFA500;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff8c00;
+}
+
+nav button {
+  background: none;
+  border: 1px solid #FFA500;
+  color: #FFA500;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background-color: #FFA500;
+  color: #121212;
+}
+
+.welcome-user {
+  margin-right: 15px;
+  color: #ccc;
+}

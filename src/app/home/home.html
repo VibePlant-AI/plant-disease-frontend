@@ -1,0 +1,51 @@
+<!-- src/app/home/home.html -->
+
+<main>
+  <div class="upload-box">
+    <h2>Upload an image</h2>
+    <div class="file-input-wrapper">
+      <label for="file-upload" class="file-upload-label">
+        Choose File
+      </label>
+      <input id="file-upload" type="file" (change)="onFileSelected($event)">
+      <span class="file-name">{{ selectedFile?.name || 'No file chosen' }}</span>
+    </div>
+    <button (click)="onSubmit()" [disabled]="!selectedFile || isLoading">
+      {{ isLoading ? 'Analyzing...' : 'Submit' }}
+    </button>
+  </div>
+
+  <!-- This section only shows up if there is a result or an error -->
+  <div *ngIf="result || errorMessage" class="result-box">
+    <h2>Result</h2>
+
+    <!-- Show error message if it exists -->
+    <div *ngIf="errorMessage" class="error">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- Show success result if it exists -->
+    <div *ngIf="result" class="result-content">
+      <p class="disease-name">{{ result.predicted_disease }}</p>
+
+      <p class="health-status" [class.healthy]="result.is_healthy" [class.unhealthy]="!result.is_healthy">
+        is_healthy: <span>{{ result.is_healthy }}</span>
+      </p>
+
+      <div class="details">
+        <h3>remedy</h3>
+        <p>{{ result.remedy }}</p>
+      </div>
+
+      <div class="details">
+        <h3>suggested_fertilizer</h3>
+        <p>{{ result.suggested_fertilizer }}</p>
+      </div>
+
+      <div class="disclaimer">
+        <h3>disclaimer</h3>
+        <p>{{ result.disclaimer }}</p>
+      </div>
+    </div>
+  </div>
+</main>

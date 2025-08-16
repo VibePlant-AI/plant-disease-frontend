@@ -1,0 +1,139 @@
+/* src/app/home/home.css */
+
+main {
+  /* This ensures the main content takes up the available space */
+  display: block;
+}
+
+.upload-box, .result-box {
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+  color: #FFA500;
+  margin-top: 0;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  width: 100%;
+}
+
+/* Hide the default ugly input */
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+/* Style the label to look like a button */
+.file-input-wrapper .file-upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.file-input-wrapper .file-upload-label:hover {
+  background-color: #444;
+}
+
+/* Style the text that shows the filename */
+.file-input-wrapper .file-name {
+  margin-left: 15px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* This targets the submit button specifically within the home component */
+.upload-box button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #FFA500;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-box button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.upload-box button:hover:not(:disabled) {
+  background-color: #ff8c00;
+}
+
+.error p {
+  color: #ff4d4d; /* Red */
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.result-content .disease-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.health-status {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.health-status span {
+  font-weight: bold;
+}
+
+.health-status.healthy span {
+  color: #4caf50; /* Green */
+}
+
+.health-status.unhealthy span {
+  color: #ff4d4d; /* Red */
+}
+
+.details, .disclaimer {
+  margin-top: 20px;
+}
+
+.details h3, .disclaimer h3 {
+  color: #FFA500;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.details p, .disclaimer p {
+  line-height: 1.6;
+  color: #dcdcdc;
+}

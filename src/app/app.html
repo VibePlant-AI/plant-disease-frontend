@@ -1,0 +1,17 @@
+<!-- src/app/app.html -->
+<header>
+  <h1>PLANT DISEASE DETECTOR</h1>
+  <nav>
+    <!-- The login/signup links are now removed -->
+    <ng-template #loggedIn>
+      <span class="welcome-user">Welcome!</span>
+      <button (click)="logout()">Logout</button>
+    </ng-template>
+
+    <!-- We now just show the loggedIn template when the user is logged in -->
+    <ng-container *ngIf="authService.isLoggedIn()">
+      <ng-container *ngTemplateOutlet="loggedIn"></ng-container>
+    </ng-container>
+  </nav>
+</header>
+<router-outlet></router-outlet>
