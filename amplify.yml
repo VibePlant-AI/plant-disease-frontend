@@ -10,7 +10,7 @@ frontend:
       commands:
         - npm run build -- --configuration production
   artifacts:
-    baseDirectory: dist/plant-frontend
+    baseDirectory: dist/plant-frontend/browser 
     files:
       - '**/*'
   cache:
