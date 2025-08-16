@@ -4,12 +4,13 @@ import { Injectable, Inject, PLATFORM_ID } from '@angular/core'; // <-- Import I
 import { isPlatformBrowser } from '@angular/common'; // <-- Import isPlatformBrowser
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://127.0.0.1:8000/api';
+  private apiUrl = environment.apiUrl;
   private tokenKey = 'auth_token';
   private isBrowser: boolean;
 
