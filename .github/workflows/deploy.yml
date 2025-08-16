@@ -33,4 +33,7 @@ jobs:
 
       - name: Deploy static files to S3
         run: |
+          echo "Contents of dist folder:"
+          ls -R ./dist
+          echo "Deploying to S3..."
           aws s3 sync ./dist/plant-frontend/browser s3://vibe-plant-frontend-app --delete
